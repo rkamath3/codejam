@@ -33,7 +33,7 @@ In case you want to try out this hands on later and the service is not available
 
 ## <a name="task0">Task 0: Preparation steps</a>
 Before, we get started with the actual implementation, we need to perform some preparation steps and familiarize ourselves with the project structure. 
-* Download the [archive with the initial project version](https://github.com/SAP/cloud-s4-sdk-book/archive/ml-codejam.zip) from the GitHub
+* Download the [archive with the initial project version](https://github.com/gavrilova-ev/codejam/archive/master.zip) from the GitHub
 * Load into your IDE as a Maven project
 * Investigate your project structure:
   * **application** folder contains the business logic that we will extend in this code jam. It also contains the JS based frontend components in the **webapp** subfolder. We will only focus on backend components, though.
