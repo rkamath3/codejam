@@ -18,8 +18,10 @@ steps:
 #Stage Specific Configurations
 stages:
   staticCodeChecks:
-    findbugsExcludesFile: '' #Path to findbugs exclude file
-    pmdExcludes: '' # List or ANT style patterns
+    findbugsExcludesFile:
+      - '**/com/sap/cloud/s4hana/examples/addressmgr/machine_learning/**'
+    pmdExcludes:
+      - '**/com/sap/cloud/s4hana/examples/addressmgr/machine_learning/**'
   integrationTests:
     credentials:
       - alias: 'MOCK_SYSTEM'
@@ -30,6 +32,10 @@ stages:
 #      - ''
 #    nonErpDestinations:
 #      - ''
+
+  s4SdkQualityChecks:
+    jacocoExcludes:
+      - '**/com/sap/cloud/s4hana/examples/addressmgr/machine_learning/**'
 
   productionDeployment:
     cfTargets:
