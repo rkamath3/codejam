@@ -47,7 +47,6 @@ public class BusinessPartnerServletTest
         RestAssured.baseURI = baseUrl.toExternalForm();
     }
 
-    @Ignore
     @Test
     public void testGetAll()
     {
@@ -60,7 +59,6 @@ public class BusinessPartnerServletTest
                 .body("[0].BusinessPartner", not(isEmptyOrNullString()));
     }
 
-    @Ignore
     @Test
     public void testGetSingle() {
         when()
