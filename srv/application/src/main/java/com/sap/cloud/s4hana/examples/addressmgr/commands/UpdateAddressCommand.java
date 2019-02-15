@@ -24,6 +24,7 @@ public class UpdateAddressCommand extends ErpCommand<Integer> {
 
     @Override
     protected Integer run() throws Exception {
-        return service.updateBusinessPartnerAddress(addressToUpdate).execute().getHttpStatusCode();
+        //TODO: Task 3 - Implement business partner update query
+        throw new RuntimeException("TODO: Implement");
     }
 }
