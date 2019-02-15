@@ -2,7 +2,6 @@ package com.sap.cloud.s4hana.examples.addressmgr.commands;
 
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.frameworks.hystrix.HystrixUtil;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataDeleteResult;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpCommand;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
@@ -28,7 +27,11 @@ public class DeleteAddressCommand extends ErpCommand<Integer> {
 
     @Override
     protected Integer run() throws Exception {
-        //TODO: Task 3 - Implement business partner delete query
-        throw new RuntimeException("TODO: Implement");
+        BusinessPartnerAddress addressToDelete = BusinessPartnerAddress.builder()
+                .businessPartner(businessPartnerId)
+                .addressID(addressId)
+                .build();
+        return service.deleteBusinessPartnerAddress(addressToDelete).execute().getHttpStatusCode();
+
     }
 }

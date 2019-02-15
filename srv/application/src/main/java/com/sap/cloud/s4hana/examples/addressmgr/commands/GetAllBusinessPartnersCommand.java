@@ -6,7 +6,6 @@ import com.sap.cloud.sdk.cloudplatform.cache.CacheKey;
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.frameworks.hystrix.HystrixUtil;
 import com.sap.cloud.sdk.s4hana.connectivity.CachingErpCommand;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.helper.Order;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 import org.slf4j.Logger;
@@ -42,8 +41,9 @@ public class GetAllBusinessPartnersCommand extends CachingErpCommand<List<Busine
 
     @Override
     protected List<BusinessPartner> runCacheable() throws Exception {
-        // TODO: Task 1 - Retrieve a list of business partners
-        throw new RuntimeException("TODO: Implement");
+        return service.getAllBusinessPartner().select(BusinessPartner.BUSINESS_PARTNER, BusinessPartner.FIRST_NAME, BusinessPartner.LAST_NAME)
+                .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
+                .execute();
     }
 
     @Override
