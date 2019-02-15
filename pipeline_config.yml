@@ -36,12 +36,12 @@ stages:
 #    nonErpDestinations:
 #      - ''
 
-productionDeployment:
-  cfTargets:
-    - org: 'P2000389027trial_trial'
-      space: 'dev'
-      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-      credentialsId: 'cf-deploy'
+  productionDeployment:
+    cfTargets:
+      - org: 'P2000389027trial_trial'
+        space: 'dev'
+        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+        credentialsId: 'cf-deploy'
 
 #  productionDeployment:
 #    cfTargets:
