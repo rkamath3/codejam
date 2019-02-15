@@ -11,7 +11,10 @@ steps:
   deployToCfWithCli:
 #    dockerImage: 's4sdk/docker-cf-cli'
     smokeTestStatusCode: '200'
-
+  mtaBuild:
+    buildTarget: 'NEO'
+    mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
+    dockerImage: 'ppiper/mta-archive-builder'
 
 #Stage Specific Configurations
 stages:
