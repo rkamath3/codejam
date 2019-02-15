@@ -25,11 +25,6 @@ stages:
       - alias: 'MOCK_SYSTEM'
         credentialId: 'MOCK'
 
-#  integrationTests:
-#    credentials:
-#      - alias: ''
-#        credentialId: ''
-
 #  s4SdkQualityChecks:
 #    jacocoExcludes:
 #      - ''
@@ -42,12 +37,4 @@ stages:
         space: 'dev'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
         credentialsId: 'cf-deploy'
-
-#  productionDeployment:
-#    cfTargets:
-#      - org: 'org'
-#        space: 'Productive'
-#        apiEndpoint: 'https://'
-#        appName: 'appName'
-#        manifest: 'manifest.yml'
-#        credentialsId: 'credentialsId'
+        
