@@ -6,4 +6,7 @@
 <Match>
   <Source name="**/com/sap/cloud/s4hana/examples/addressmgr/blockchain/**" />
 </Match>
+<Match>
+		<Bug pattern="NP_ALWAYS_NULL"/>
+</Match>
 </FindBugsFilter>
